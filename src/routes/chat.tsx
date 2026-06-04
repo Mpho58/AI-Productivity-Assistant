@@ -15,6 +15,26 @@ export const Route = createFileRoute("/chat")({
         content:
           "An interactive AI assistant for everyday workplace questions — brainstorming, writing, research, and quick answers.",
       },
+      { property: "og:title", content: "Workplace Chatbot · WorkMate AI" },
+      {
+        property: "og:description",
+        content: "Interactive AI assistant for workplace questions, brainstorming, and quick answers.",
+      },
+      { property: "og:url", content: "https://focus-fuel-automator.lovable.app/chat" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Workplace Chatbot",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          description: "Interactive AI workplace assistant for brainstorming, writing, and quick answers.",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }),
+      },
     ],
   }),
   component: ChatPage,
