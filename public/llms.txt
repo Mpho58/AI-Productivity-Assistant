@@ -11,3 +11,4 @@ WorkMate AI bundles four focused tools behind a single workspace, each tuned wit
 - [Meeting Notes Summarizer](/meeting): Turn raw notes into decisions, action items, and deadlines.
 - [AI Task Planner](/planner): Prioritized daily or weekly plans with realistic focus blocks.
 - [Workplace Chatbot](/chat): Interactive assistant for workplace questions and brainstorming.
+- [Guide: How to automate workplace tasks with AI](/blog/how-to-automate-workplace-tasks): Practical playbook for using AI tools to take over routine email, meetings, and planning.

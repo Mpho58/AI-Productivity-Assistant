@@ -15,6 +15,7 @@ import { Route as MeetingRouteImport } from './routes/meeting'
 import { Route as EmailRouteImport } from './routes/email'
 import { Route as ChatRouteImport } from './routes/chat'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogHowToAutomateWorkplaceTasksRouteImport } from './routes/blog.how-to-automate-workplace-tasks'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -46,6 +47,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogHowToAutomateWorkplaceTasksRoute =
+  BlogHowToAutomateWorkplaceTasksRouteImport.update({
+    id: '/blog/how-to-automate-workplace-tasks',
+    path: '/blog/how-to-automate-workplace-tasks',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByFullPath {
   '/meeting': typeof MeetingRoute
   '/planner': typeof PlannerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/how-to-automate-workplace-tasks': typeof BlogHowToAutomateWorkplaceTasksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +70,7 @@ export interface FileRoutesByTo {
   '/meeting': typeof MeetingRoute
   '/planner': typeof PlannerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/how-to-automate-workplace-tasks': typeof BlogHowToAutomateWorkplaceTasksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,12 +80,27 @@ export interface FileRoutesById {
   '/meeting': typeof MeetingRoute
   '/planner': typeof PlannerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/how-to-automate-workplace-tasks': typeof BlogHowToAutomateWorkplaceTasksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/chat' | '/email' | '/meeting' | '/planner' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/chat'
+    | '/email'
+    | '/meeting'
+    | '/planner'
+    | '/sitemap.xml'
+    | '/blog/how-to-automate-workplace-tasks'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/chat' | '/email' | '/meeting' | '/planner' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/chat'
+    | '/email'
+    | '/meeting'
+    | '/planner'
+    | '/sitemap.xml'
+    | '/blog/how-to-automate-workplace-tasks'
   id:
     | '__root__'
     | '/'
@@ -85,6 +109,7 @@ export interface FileRouteTypes {
     | '/meeting'
     | '/planner'
     | '/sitemap.xml'
+    | '/blog/how-to-automate-workplace-tasks'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +119,7 @@ export interface RootRouteChildren {
   MeetingRoute: typeof MeetingRoute
   PlannerRoute: typeof PlannerRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BlogHowToAutomateWorkplaceTasksRoute: typeof BlogHowToAutomateWorkplaceTasksRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -140,6 +166,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/how-to-automate-workplace-tasks': {
+      id: '/blog/how-to-automate-workplace-tasks'
+      path: '/blog/how-to-automate-workplace-tasks'
+      fullPath: '/blog/how-to-automate-workplace-tasks'
+      preLoaderRoute: typeof BlogHowToAutomateWorkplaceTasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -150,17 +183,8 @@ const rootRouteChildren: RootRouteChildren = {
   MeetingRoute: MeetingRoute,
   PlannerRoute: PlannerRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BlogHowToAutomateWorkplaceTasksRoute: BlogHowToAutomateWorkplaceTasksRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
