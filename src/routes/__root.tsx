@@ -77,22 +77,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "WorkMate AI" },
+      { title: "WorkMate AI — The Everyday Workplace Assistant" },
       { name: "description", content: "An AI productivity suite for the modern workplace." },
       { name: "author", content: "WorkMate AI" },
-      { property: "og:title", content: "WorkMate AI" },
+      { property: "og:site_name", content: "WorkMate AI" },
+      { property: "og:title", content: "WorkMate AI — The Everyday Workplace Assistant" },
       { property: "og:description", content: "An AI productivity suite for the modern workplace." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "WorkMate AI" },
-      { name: "twitter:description", content: "An AI productivity suite for the modern workplace." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/75fff90e-3daf-4dd7-aed0-e7c61934fc0c" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/75fff90e-3daf-4dd7-aed0-e7c61934fc0c" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "WorkMate AI",
+              url: "https://focus-fuel-automator.lovable.app",
+              description: "An AI productivity suite for the modern workplace.",
+            },
+            {
+              "@type": "WebSite",
+              name: "WorkMate AI",
+              url: "https://focus-fuel-automator.lovable.app",
+              description: "Draft emails, summarize meetings, plan tasks, and chat with a workplace assistant.",
+            },
+          ],
+        }),
       },
     ],
   }),
