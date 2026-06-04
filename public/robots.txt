@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://focus-fuel-automator.lovable.app/sitemap.xml
