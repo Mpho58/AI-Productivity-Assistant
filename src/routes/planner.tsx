@@ -14,6 +14,26 @@ export const Route = createFileRoute("/planner")({
         content:
           "Drop in your tasks. Get a prioritized, timeboxed daily or weekly plan with realistic focus blocks.",
       },
+      { property: "og:title", content: "AI Task Planner · WorkMate AI" },
+      {
+        property: "og:description",
+        content: "Prioritized, timeboxed daily or weekly plans with realistic focus blocks.",
+      },
+      { property: "og:url", content: "https://focus-fuel-automator.lovable.app/planner" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "AI Task Planner",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          description: "AI planner that turns a task list into a prioritized, timeboxed schedule.",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }),
+      },
     ],
   }),
   component: PlannerPage,

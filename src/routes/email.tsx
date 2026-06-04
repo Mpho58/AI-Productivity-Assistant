@@ -14,6 +14,26 @@ export const Route = createFileRoute("/email")({
         content:
           "Generate professional emails in any tone, adapted to your audience — clients, managers, teammates and more.",
       },
+      { property: "og:title", content: "Smart Email Generator · WorkMate AI" },
+      {
+        property: "og:description",
+        content: "Draft professional emails in any tone, tuned for clients, managers, or teammates.",
+      },
+      { property: "og:url", content: "https://focus-fuel-automator.lovable.app/email" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Smart Email Generator",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          description: "AI-powered email drafting tool that adapts tone to your audience.",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }),
+      },
     ],
   }),
   component: EmailPage,
