@@ -14,6 +14,26 @@ export const Route = createFileRoute("/meeting")({
         content:
           "Paste meeting notes or a transcript. WorkMate extracts decisions, action items, deadlines and open questions.",
       },
+      { property: "og:title", content: "Meeting Notes Summarizer · WorkMate AI" },
+      {
+        property: "og:description",
+        content: "Turn raw meeting notes into decisions, action items, and deadlines.",
+      },
+      { property: "og:url", content: "https://focus-fuel-automator.lovable.app/meeting" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Meeting Notes Summarizer",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          description: "AI tool that extracts decisions, action items, and deadlines from meeting notes.",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }),
+      },
     ],
   }),
   component: MeetingPage,
