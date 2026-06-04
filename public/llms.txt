@@ -1,0 +1,13 @@
+# WorkMate AI
+
+> An AI productivity suite for the everyday workplace — draft emails, summarize meetings, plan your day, and chat with a workplace assistant.
+
+WorkMate AI bundles four focused tools behind a single workspace, each tuned with engineered system prompts to produce ready-to-use, structured output.
+
+## Pages
+
+- [Home](/): Overview of the WorkMate AI suite.
+- [Smart Email Generator](/email): Draft professional emails in any tone for clients, managers, or teammates.
+- [Meeting Notes Summarizer](/meeting): Turn raw notes into decisions, action items, and deadlines.
+- [AI Task Planner](/planner): Prioritized daily or weekly plans with realistic focus blocks.
+- [Workplace Chatbot](/chat): Interactive assistant for workplace questions and brainstorming.
